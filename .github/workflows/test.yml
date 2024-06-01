@@ -16,4 +16,4 @@ jobs:
         run: echo ${{vars.HOGE }}
 
       - name: envで定義した変数の値を表示する
-        run: echo ${ENV_TEST_KEY}
+        run: echo $ENV_TEST_KEY
