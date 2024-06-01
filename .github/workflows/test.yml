@@ -1,0 +1,13 @@
+name: ワークフローのテスト
+on: push
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: secretsの値を表示する
+        run: echo ${secrets.SECRETKEY}
+
+      - name: 変数の値を表示する
+        run: echo ${vars.HOGE}
