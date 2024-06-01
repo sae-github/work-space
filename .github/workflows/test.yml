@@ -1,9 +1,6 @@
 name: ワークフローのテスト
 on: push
 
-env:
-  ENVIRONMENT_SECRETS: ${{ secrets.SECRETKEY }}
-  ENVIRONMENT_VARIABLES: ${{vars.HOGE }}
 
 jobs:
   echo:
@@ -11,7 +8,7 @@ jobs:
 
     steps:
       - name: secretsの値を表示する
-        run: echo ${ENVIRONMENT_SECRETS}
+        run: echo ${{ secrets.SECRETKEY }}
 
       - name: 変数の値を表示する
-        run: echo ${ENVIRONMENT_VARIABLES}
+        run: echo ${{vars.HOGE }}
