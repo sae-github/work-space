@@ -1,13 +1,17 @@
 name: ワークフローのテスト
 on: push
 
+env:
+  ENVIRONMENT_SECRETS: ${{ secrets.SECRETKEY }}
+  ENVIRONMENT_VARIABLES: ${{vars.HOGE }}
+
 jobs:
   echo:
     runs-on: ubuntu-latest
 
     steps:
       - name: secretsの値を表示する
-        run: echo ${secrets.SECRETKEY}
+        run: echo ${ENVIRONMENT_SECRETS}
 
       - name: 変数の値を表示する
-        run: echo ${vars.HOGE}
+        run: echo ${ENVIRONMENT_VARIABLES}
