@@ -1,10 +1,8 @@
-import { Link, type Locale } from "@/i18n.config";
 import { useLocale, useTranslations } from "next-intl";
 import LocaleSwitcher from "../_components/LocaleSwitcher";
-
-export default function LocalePage() {
+export default function HogePage() {
   const t = useTranslations("Header");
-  const locale = useLocale() as Locale;
+  const locale = useLocale() as "ja" | "en";
   return (
     <main className="p-8">
       <LocaleSwitcher locale={locale} />
